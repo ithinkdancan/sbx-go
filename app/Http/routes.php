@@ -16,5 +16,5 @@ $app->get('/', function() {
 });
 
 $app->post('/create', 'App\Http\Controllers\Redirector@create');
-$app->get('/{path:[A-Za-z-_]+}', 'App\Http\Controllers\Redirector@go');
+$app->get('/{path:[0-9A-Za-z-_]+}', 'App\Http\Controllers\Redirector@go');
 
