@@ -26,6 +26,7 @@ class Redirector extends BaseController
     	$url = Url::where('short_url', '=' ,$path)->first();
     	
     	if($url){
+            $url->hits()->create([]);
     		header('Location:' . $url->full_url); die();
     	} else {
     		 return view('create', ['path' => $path]);
